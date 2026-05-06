@@ -1,11 +1,16 @@
 import { type Express } from "express";
 import { createServer as createViteServer, createLogger } from "vite";
 import { type Server } from "http";
-import viteConfig from "../vite.config";
 import fs from "fs";
 import path from "path";
+import viteConfig from "../vite.config";
 import { nanoid } from "nanoid";
 
+declare const __dirname: string;
+const __dirnameResolved =
+  typeof __dirname === "string"
+    ? __dirname
+    : path.resolve(process.cwd(), "server");
 const viteLogger = createLogger();
 
 export async function setupVite(server: Server, app: Express) {
@@ -31,12 +36,12 @@ export async function setupVite(server: Server, app: Express) {
 
   app.use(vite.middlewares);
 
-  app.use("/{*path}", async (req, res, next) => {
+  app.use(async (req, res, next) => {
     const url = req.originalUrl;
 
     try {
       const clientTemplate = path.resolve(
-        import.meta.dirname,
+        __dirnameResolved,
         "..",
         "client",
         "index.html",

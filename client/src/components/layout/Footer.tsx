@@ -18,7 +18,7 @@ export default function Footer() {
             <div className="text-sm text-muted-foreground space-y-2">
               <p>1240 McDonough Lake Road</p>
               <p>Collinsville, IL 62234</p>
-              <p>dan@legacyrevivalcenter.org</p>
+              <p>dan@legacyrevival.org</p>
               <p>(618) 345-5408</p>
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border/10 pt-8 mt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Legacy Revival Center. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} <a href="/" className="hover:text-primary">Legacy Revival Center</a> <span> | </span> All rights reserved <span> | </span>Website designed by <a href="https://www.gatewaycornerstone.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Gateway Cornerstone Technologies</a></p>
           <div className="flex gap-4">
             <Link href="/blog/login" className="hover:text-primary">Author Login</Link>
           </div>

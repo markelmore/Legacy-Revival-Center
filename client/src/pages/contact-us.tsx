@@ -35,7 +35,7 @@ export default function ContactUs() {
                 <Textarea id="message" className="rounded-none min-h-[150px] focus-visible:ring-primary bg-muted/50" />
               </div>
               <Button asChild className="rounded-none h-14 px-8 bg-primary hover:bg-primary/90 text-white font-bold uppercase tracking-wider text-lg w-full">
-                <a href="mailto:dan@legacyrevivalcenter.org">Send Message</a>
+                <a href="mailto:dan@legacyrevival.org">Send Message</a>
               </Button>
             </form>
           </div>
@@ -65,7 +65,7 @@ export default function ContactUs() {
                 <Mail className="w-6 h-6 text-primary mt-1" />
                 <div>
                   <h3 className="font-bold uppercase mb-1">Email</h3>
-                  <p className="text-muted-foreground">dan@legacyrevivalcenter.org</p>
+                  <p className="text-muted-foreground">dan@legacyrevival.org</p>
                 </div>
               </div>
             </div>
