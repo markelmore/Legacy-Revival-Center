@@ -29,12 +29,13 @@ export default function Sermons() {
         setLoadingPodcasts(false);
       });
 
-    // Fetch YouTube Videos
+    // Fetch YouTube Videos (get 4, then skip the first one to exclude it from featured)
     fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(YOUTUBE_RSS_URL)}`)
       .then(res => res.json())
       .then(data => {
         if (data.items) {
-          setYoutubeVideos(data.items.slice(0, 3));
+          // Skip the first (most recent) video and show the next 3
+          setYoutubeVideos(data.items.slice(1, 4));
         }
         setLoadingVideos(false);
       })
